@@ -19,13 +19,12 @@
 			if(original.hasClass('code')) {
 				editArea.addClass('code');
 			}
-			
 			else {
 				editArea.addClass('rah_writer_plain');
 			}
 			
-			editArea.text(original.val());
-			editArea.contents().focus();
+			editArea.val(original.val());
+			editArea.focus();
 			
 			$('#rah_writer').submit(function(e) {
 				e.preventDefault();
