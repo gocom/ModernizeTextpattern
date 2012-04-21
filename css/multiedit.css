@@ -1,0 +1,7 @@
+/*!
+ * Some minimal styles for multi-edit
+ */
+
+table#list tr.active td {
+	background: #fff6d3;
+}

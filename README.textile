@@ -1,0 +1,8 @@
+h1. Modernize Textpattern
+
+p. *Modernize Textpattern* is a collection of jQuery flavored JavaScript that aims to modernize Textpattern CMS' admin-side widget elements, including search forms, pagination and multi-edit controls. Designed Phil Wareham's "Hive":https://github.com/philwareham/txp-hive-admin-theme theme in mind.
+
+h2. Requirements
+
+* Textpattern v4.5.0 (r3734) or newer.
+* PHP5
