@@ -8,7 +8,7 @@
 
 (function($){
 	$.fn.rah_placeholder = function() {
-		this.each(
+		return this.each(
 			function() {
 				var label = $('label[for="'+$(this).attr('id')+'"]').remove().text();
 				$(this).attr({'placeholder' : label, 'title' : label});
