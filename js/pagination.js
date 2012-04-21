@@ -15,6 +15,11 @@
 			pages : this.find('select[name="page"]')
 		};
 		
+		if(form.pages.length < 1) {
+			this.remove();
+			return;
+		}
+		
 		form.prev = form.pages.prev('.navlink');
 		form.next = form.pages.next('.navlink');
 		
