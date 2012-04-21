@@ -1,0 +1,1 @@
+p. This directory contains some minimal, default placeholder styles for the modern widgets. The files are named to match the widget and JavaScript counterpart.
