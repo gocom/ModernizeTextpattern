@@ -22,7 +22,7 @@
 		form.max = form.selected+5;
 		
 		form.pages.find('option').each(function(i) {
-			var page = $(this).val();
+			var page = parseInt($(this).val());
 			
 			if(page > form.max || page < form.min) {
 				return;
