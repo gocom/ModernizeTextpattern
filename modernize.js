@@ -3,7 +3,6 @@
  */
 
 $(document).ready(function(){
-	$('#page-article textarea').rah_writer();
 	$('#page-login input#name, #page-login input#password, #page-article #title').rah_placeholder();
 	$('#page-list table#list').rah_multiedit();
 	$('.search-form').rah_search();
