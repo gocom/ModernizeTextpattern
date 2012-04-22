@@ -5,3 +5,7 @@
 table#list tr.active td {
 	background: #fff6d3;
 }
+
+table#list tfoot td.multi-edit br {
+	display: none;
+}
