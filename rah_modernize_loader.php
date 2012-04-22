@@ -64,7 +64,7 @@ class rah_modernize {
 	 * @return bool
 	 */
 	
-	private function safe_dir($f) {
+	public function safe_dir($f) {
 		return file_exists($f) && is_readable($f) && is_dir($f);
 	}
 	
@@ -73,7 +73,7 @@ class rah_modernize {
 	 * @return bool
 	 */
 	
-	private function safe_file($f) {
+	public function safe_file($f) {
 		return file_exists($f) && is_readable($f) && is_file($f);
 	}
 	
@@ -83,7 +83,7 @@ class rah_modernize {
 	 * @return array
 	 */
 
-	private function collect_sources($type) {
+	public function collect_sources($type) {
 		
 		$f = $this->assets . '/' . $type;
 		
