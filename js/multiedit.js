@@ -11,17 +11,19 @@
 		
 		return this.each(function() {
 		
+			var $this = $(this);
+		
 			var multiedit = {
-				select : $(this).find('tfoot .multi-edit select'),
-				button : $(this).find('tfoot .multi-edit [type=submit]'),
-				boxes : $(this).find('tbody td input[type="checkbox"]')
+				select : $this.find('tfoot .multi-edit select'),
+				button : $this.find('tfoot .multi-edit [type=submit]'),
+				boxes : $this.find('tbody td input[type="checkbox"]')
 			};
 			
 			/*
 				Remove extra options
 			*/
 			
-			$(this).find('tfoot td.multi-edit').html(multiedit.select).append(' ').append(multiedit.button);
+			$this.find('tfoot .multi-edit').html(multiedit.select).append(' ').append(multiedit.button);
 			
 			multiedit.select.hide();
 			multiedit.button.hide();
@@ -47,7 +49,7 @@
 				Clicking the row selects the checkbox
 			*/
 			
-			$(this).find('tbody td').live('click', function(e) {
+			$this.find('tbody td').live('click', function(e) {
 				var box = $(this).parent('tr').find('input[type="checkbox"]');
 				
 				if(box.is(':checked') == false) {
@@ -64,7 +66,7 @@
 				Double clicking heading selects none/all
 			*/
 			
-			$(this).find('thead th').live('dblclick', function(e) {
+			$this.find('thead th').live('dblclick', function(e) {
 				if(multiedit.boxes.is(':checked')) {
 					multiedit.boxes.removeAttr('checked');
 					multiedit.boxes.parents('tr').removeClass('active');
@@ -80,7 +82,7 @@
 				if there is
 			*/
 			
-			$(this).find('tbody td, thead th').live('click dblclick', function() {
+			$this.find('tbody td, thead th').live('click dblclick', function() {
 				if(multiedit.boxes.is(':checked')) {
 					multiedit.select.show();
 				}
