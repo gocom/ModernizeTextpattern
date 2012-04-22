@@ -51,15 +51,11 @@ class rah_modernize {
 		}
 		
 		else {
-			$f = dirname(txpath) . '/rah_modernize/assets';
+			$f = dirname(txpath) . '/rah_modernize';
 		}
 		
 		if($this->safe_dir($f)) {
 			$this->assets = $f;
-		}
-		
-		elseif($this->safe_dir(dirname(__FILE__)) && $this->safe_dir(dirname(__FILE__).'/js')) {
-			$this->assets = dirname(__FILE__);
 		}
 	}
 	
