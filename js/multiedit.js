@@ -30,7 +30,7 @@
 			
 			/*
 				Changing multiedit dropdowns value to empty
-				hides extra options
+				hides second step
 			*/
 			
 			multiedit.select.change(function() {
@@ -63,7 +63,7 @@
 			});
 			
 			/*
-				Double clicking heading selects none/all
+				Double clicking heading selects all
 			*/
 			
 			$this.find('thead th').live('dblclick', function(e) {
@@ -78,8 +78,7 @@
 			});
 			
 			/*
-				Checks if something has been selected, and show the dropdown
-				if there is
+				See if something has been selected
 			*/
 			
 			$this.find('tbody td, thead th').live('click dblclick', function() {
@@ -90,6 +89,7 @@
 					multiedit.select.hide();
 					multiedit.button.hide();
 					multiedit.select.parent().find('#js').hide();
+					multiedit.select.val('');
 				}
 			});
 		});
