@@ -50,6 +50,11 @@
 			*/
 			
 			$this.find('tbody td').live('click', function(e) {
+				
+				if(e.target != this){
+					return true;
+				}
+				
 				var box = $(this).parent('tr').find('input[type="checkbox"]');
 				
 				if(box.is(':checked') == false) {
@@ -67,6 +72,11 @@
 			*/
 			
 			$this.find('thead th').live('dblclick', function(e) {
+				
+				if(e.target != this){
+					return true;
+				}
+			
 				if(multiedit.boxes.is(':checked')) {
 					multiedit.boxes.removeAttr('checked');
 					multiedit.boxes.parents('tr').removeClass('active');
