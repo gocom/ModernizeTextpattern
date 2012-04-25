@@ -51,7 +51,7 @@
 			
 			$this.find('tbody td, tbody td *').live('click', function(e) {
 				
-				if(e.target != this || $(this).is('a, input, button, .edit')){
+				if(e.target != this || $(this).is('a, :input')){
 					return true;
 				}
 				
