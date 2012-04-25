@@ -16,7 +16,8 @@
 			var multiedit = {
 				select : $this.find('tfoot .multi-edit select'),
 				button : $this.find('tfoot .multi-edit [type=submit]'),
-				boxes : $this.find('tbody td input[type="checkbox"]')
+				boxes : $this.find('tbody td input[type="checkbox"]'),
+				lastcheck : null
 			};
 			
 			/*
@@ -58,12 +59,23 @@
 				var box = $(this).parents('tr').find('input[type="checkbox"]');
 				
 				if(box.is(':checked') == false) {
+				
+					if(e.shiftKey && multiedit.lastcheck) {
+						var start = multiedit.boxes.index(box);
+						var end = multiedit.boxes.index(multiedit.lastcheck);
+						
+						multiedit.boxes.slice(Math.min(start, end), Math.max(start, end)+1).attr('checked', true).parents('tr').addClass('active');
+					}
+					
 					box.attr('checked', true);
 					$(this).parents('tr').addClass('active');
+					multiedit.lastcheck = box;
 				}
+				
 				else {
 					box.removeAttr('checked');
 					$(this).parents('tr').removeClass('active');
+					multiedit.lastcheck = null;
 				}
 			});
 			
@@ -85,6 +97,8 @@
 					multiedit.boxes.attr('checked', true);
 					multiedit.boxes.parents('tr').addClass('active');
 				}
+				
+				multiedit.lastcheck = null;
 			});
 			
 			/*
