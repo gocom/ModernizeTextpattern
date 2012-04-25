@@ -1,0 +1,11 @@
+/*!
+ * Some minimal styles for pagination links
+ */
+
+.navlink-active {
+	opacity: 0.4;
+}
+
+.navlink-disabled {
+	display: none;
+}
