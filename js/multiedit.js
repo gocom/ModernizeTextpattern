@@ -49,9 +49,9 @@
 				Clicking the row selects the checkbox
 			*/
 			
-			$this.find('tbody td, tbody td span, tbody td ul, tbody td li').live('click', function(e) {
+			$this.find('tbody td, tbody td *').live('click', function(e) {
 				
-				if(e.target != this){
+				if(e.target != this || $(this).is('a, input, button, .edit')){
 					return true;
 				}
 				
