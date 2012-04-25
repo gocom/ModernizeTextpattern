@@ -37,7 +37,7 @@
 					return;
 				}
 			
-				form.pages.before(' <a class="navlink'+(form.selected == page ? ' active' : '')+'" href="?'+form.q+'&page='+page+'">'+page+'</a> ');
+				form.pages.before(' <a class="navlink'+(form.selected == page ? ' navlink-active' : '')+'" href="?'+form.q+'&page='+page+'">'+page+'</a> ');
 			});
 			
 			form.pages.remove();
