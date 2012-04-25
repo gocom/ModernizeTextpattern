@@ -49,21 +49,21 @@
 				Clicking the row selects the checkbox
 			*/
 			
-			$this.find('tbody td').live('click', function(e) {
+			$this.find('tbody td, tbody td span, tbody td ul, tbody td li').live('click', function(e) {
 				
 				if(e.target != this){
 					return true;
 				}
 				
-				var box = $(this).parent('tr').find('input[type="checkbox"]');
+				var box = $(this).parents('tr').find('input[type="checkbox"]');
 				
 				if(box.is(':checked') == false) {
 					box.attr('checked', true);
-					$(this).parent('tr').addClass('active');
+					$(this).parents('tr').addClass('active');
 				}
 				else {
 					box.removeAttr('checked');
-					$(this).parent('tr').removeClass('active');
+					$(this).parents('tr').removeClass('active');
 				}
 			});
 			
