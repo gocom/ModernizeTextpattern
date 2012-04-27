@@ -17,16 +17,16 @@
 				select : $this.find('tfoot .multi-edit select'),
 				button : $this.find('tfoot .multi-edit [type=submit]'),
 				boxes : $this.find('tbody td input[type="checkbox"]'),
-				lastcheck : null
+				lastcheck : null,
+				form : $('<div class="multi-edit-form"></div>')
 			};
 			
 			/*
 				Remove extra options
 			*/
 			
-			$this.find('tfoot .multi-edit').html(multiedit.select).append(' ').append(multiedit.button);
-			
-			multiedit.select.hide();
+			$this.find('tfoot .multi-edit').html(multiedit.form);
+			multiedit.form.append(multiedit.select).append(' ').append(multiedit.button).hide();
 			multiedit.button.hide();
 			
 			/*
@@ -107,11 +107,11 @@
 			
 			$this.find('tbody td, thead th').live('click dblclick', function() {
 				if(multiedit.boxes.is(':checked')) {
-					multiedit.select.show();
+					multiedit.form.show();
 				}
 				else {
-					multiedit.select.hide();
 					multiedit.button.hide();
+					multiedit.form.hide();
 					multiedit.select.parent().find('#js').hide();
 					multiedit.select.val('');
 				}
