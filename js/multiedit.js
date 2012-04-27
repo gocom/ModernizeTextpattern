@@ -16,6 +16,7 @@
 			var multiedit = {
 				select : $this.find('tfoot .multi-edit select'),
 				button : $this.find('tfoot .multi-edit [type=submit]'),
+				hidden : $this.find('tfoot .multi-edit input[type="hidden"]'),
 				boxes : $this.find('tbody td input[type="checkbox"]'),
 				lastcheck : null,
 				form : $('<div class="multi-edit-form"></div>')
@@ -26,7 +27,7 @@
 			*/
 			
 			$this.find('tfoot .multi-edit').html(multiedit.form);
-			multiedit.form.append(multiedit.select).append(' ').append(multiedit.button).hide();
+			multiedit.form.append(multiedit.select).append(' ').append(multiedit.button).append(multiedit.hidden).hide();
 			multiedit.button.hide();
 			
 			/*
