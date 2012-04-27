@@ -17,7 +17,7 @@
 				select : $this.find('tfoot .multi-edit select'),
 				button : $this.find('tfoot .multi-edit [type=submit]'),
 				hidden : $this.find('tfoot .multi-edit input[type="hidden"]'),
-				boxes : $this.find('tbody td input[type="checkbox"]'),
+				boxes : $this.find('tbody td:visible input[type="checkbox"]:visible'),
 				lastcheck : null,
 				form : $('<div class="multi-edit-form"></div>')
 			};
@@ -57,12 +57,16 @@
 					return true;
 				}
 				
-				var box = $(this).parents('tr').find('input[type="checkbox"]');
+				var box = $(this).parents('tr').find('td:visible input[type="checkbox"]');
+				var start = multiedit.boxes.index(box);
+				
+				if(!box || start === -1) {
+					return true;
+				}
 				
 				if(box.is(':checked') == false) {
 				
 					if(e.shiftKey && multiedit.lastcheck) {
-						var start = multiedit.boxes.index(box);
 						var end = multiedit.boxes.index(multiedit.lastcheck);
 						
 						multiedit.boxes.slice(Math.min(start, end), Math.max(start, end)+1).attr('checked', true).parents('tr').addClass('active');
