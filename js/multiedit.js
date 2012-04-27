@@ -41,7 +41,7 @@
 				}
 				else {
 					multiedit.button.hide();
-					multiedit.select.parent().find('#js').hide();
+					multiedit.select.parent().find('#js').remove();
 				}
 			});
 			
@@ -113,7 +113,7 @@
 				else {
 					multiedit.button.hide();
 					multiedit.form.hide();
-					multiedit.select.parent().find('#js').hide();
+					multiedit.select.parent().find('#js').remove();
 					multiedit.select.val('');
 				}
 			});
