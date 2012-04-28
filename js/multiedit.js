@@ -19,8 +19,13 @@
 				hidden : $this.find('tfoot .multi-edit input[type="hidden"]'),
 				boxes : $this.find('tbody td:visible input[type="checkbox"]:visible'),
 				lastcheck : null,
-				form : $('<div class="multi-edit-form"></div>')
+				form : $('<div class="multi-edit-form"></div>'),
+				clickregion : $this.find('tbody td, thead th')
 			};
+			
+			multiedit.clickregion.live('click dblclick', function() {
+				multiedit.boxes = $this.find('tbody td:visible input[type="checkbox"]');
+			});
 			
 			/*
 				Remove extra options
@@ -110,7 +115,7 @@
 				See if something has been selected
 			*/
 			
-			$this.find('tbody td, thead th').live('click dblclick', function() {
+			multiedit.clickregion.live('click dblclick', function() {
 				if(multiedit.boxes.is(':checked')) {
 					multiedit.form.show();
 				}
