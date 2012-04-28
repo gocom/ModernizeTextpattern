@@ -17,14 +17,14 @@
 				select : $this.find('tfoot .multi-edit select'),
 				button : $this.find('tfoot .multi-edit [type=submit]'),
 				hidden : $this.find('tfoot .multi-edit input[type="hidden"]'),
-				boxes : $this.find('tbody td:visible input[type="checkbox"]:visible'),
+				boxes : $this.find('tbody td:visible input[type="checkbox"]:visible').addClass('multi-edit-checkbox'),
 				lastcheck : null,
 				form : $('<div class="multi-edit-form"></div>'),
 				clickregion : $this.find('tbody td, thead th')
 			};
 			
 			multiedit.clickregion.live('click dblclick', function() {
-				multiedit.boxes = $this.find('tbody td:visible input[type="checkbox"]');
+				multiedit.boxes = $this.find('tbody td:visible input[type="checkbox"]:visible, tbody td:visible input[type="checkbox"].multi-edit-checkbox').addClass('multi-edit-checkbox');
 			});
 			
 			/*
