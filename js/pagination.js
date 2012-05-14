@@ -24,8 +24,8 @@
 				return;
 			}
 			
-			form.prev = form.pages.prev('.navlink');
-			form.next = form.pages.next('.navlink');
+			form.prev = form.pages.prevAll('.navlink').eq(0);
+			form.next = form.pages.nextAll('.navlink').eq(0);
 			
 			form.min = form.selected-5;
 			form.max = form.selected+5;
@@ -41,6 +41,28 @@
 			});
 			
 			form.pages.remove();
+			
+			$(document).keydown(function(e) {
+				var uri = '';
+				
+				if(this !== e.target && (/textarea|select/i.test(e.target.nodeName) || e.target.type === 'text')) {
+					return;
+				}
+				
+				if(e.keyCode == 37 && form.prev.length) {
+					uri = form.prev.attr('href');
+				}
+				
+				else if(e.keyCode == 39 && form.next.length) {
+					uri = form.next.attr('href');
+				}
+					
+				if(uri) {
+					e.preventDefault();
+					window.location = uri;
+					return false;
+				}
+			});
 		});
 	};
 })(jQuery);
