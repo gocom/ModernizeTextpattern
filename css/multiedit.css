@@ -2,10 +2,10 @@
  * Some minimal styles for multi-edit
  */
 
-table#list tr.active td {
+table.txp-list tr.active td {
 	background: #fff6d3;
 }
 
-table#list tfoot td.multi-edit br {
+table.txp-list tfoot td.multi-edit br {
 	display: none;
 }
