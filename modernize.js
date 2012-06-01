@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-	$('#page-list table#list, #page-image table#list, #page-file table#list, #page-link table#list, #page-discuss table#list, #page-admin table#list, #page-log table#list, #page-plugin table#list').rah_multiedit();
+	$('#page-list .txp-list, #page-image .txp-list, #page-file .txp-list, #page-link .txp-list, #page-discuss .txp-list, #page-admin .txp-list, #page-log .txp-list, #page-plugin .txp-list').rah_multiedit();
 	$('.search-form').rah_search();
 	$('.pageby').rah_pageby();
 	$('.detail-toggle').rah_detailstoggle();
