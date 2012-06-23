@@ -14,24 +14,25 @@
 			var $this = $(this);
 		
 			var multiedit = {
-				select : $this.find('tfoot .multi-edit select'),
-				button : $this.find('tfoot .multi-edit [type=submit]'),
-				hidden : $this.find('tfoot .multi-edit input[type="hidden"]'),
-				boxes : $this.find('tbody td:visible input[type="checkbox"]:visible').addClass('multi-edit-checkbox'),
+				select : $('.multi-edit select'),
+				button : $('.multi-edit [type=submit]'),
+				hidden : $('.multi-edit input[type="hidden"]'),
+				boxes : $this.find('tbody input[name="selected[]"][type="checkbox"]'),
 				lastcheck : null,
 				form : $('<div class="multi-edit-form"></div>'),
 				clickregion : $this.find('tbody td, thead th')
 			};
 			
 			multiedit.clickregion.live('click dblclick', function() {
-				multiedit.boxes = $this.find('tbody td:visible input[type="checkbox"]:visible, tbody td:visible input[type="checkbox"].multi-edit-checkbox').addClass('multi-edit-checkbox');
+				multiedit.boxes = $this.find('tbody input[name="selected[]"][type="checkbox"]');
 			});
 			
 			/*
 				Remove extra options
 			*/
 			
-			$this.find('tfoot .multi-edit').html(multiedit.form);
+			$('p.multi-edit, tfoot td.multi-edit').html(multiedit.form);
+			
 			multiedit.form.append(multiedit.select).append(' ').append(multiedit.button).append(multiedit.hidden).hide();
 			multiedit.button.hide();
 			
