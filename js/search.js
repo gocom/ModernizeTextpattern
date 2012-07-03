@@ -25,7 +25,7 @@
 			}
 			
 			form.button.remove();
-			form.field.attr('placeholder', form.label.text()+'…');
+			form.field.attr('placeholder', form.label.text());
 			form.label.remove();
 			
 			form.field.bind('keyup input change blur', function() {
