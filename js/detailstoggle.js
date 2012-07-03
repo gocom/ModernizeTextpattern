@@ -10,15 +10,16 @@
 	$.fn.rah_detailstoggle = function() {
 		return this.each(function() {
 			var $this = $(this);
-		
+			
 			var form = {
-				toggle : $this.find('input[type=checkbox]'),
-				label : $this.find('label')
+				thead : $('.txp-list thead th'),
+				label : $this.find('label').text()
 			};
-	
-			$this.parents('table').find('thead tr th:last-child').html(form.toggle);
-			form.toggle.attr('title', form.label.text());
-			form.label.remove();
-		});
+			
+			form.thead.dblclick(function(e) {
+				e.preventDefault();
+				$this.find('input[type=checkbox]').click();
+			});
+		}).hide();
 	};
 })(jQuery);
