@@ -14,9 +14,9 @@
 			var $this = $(this);
 		
 			var form = {
-				q : $this.find('input:hidden').serialize(),
-				selected : parseInt($this.find('select[name="page"] option:selected').val()),
-				pages : $this.find('select[name="page"]')
+				q : $this.closest('form').find('input:hidden').serialize(),
+				selected : parseInt($this.closest('form').find('select[name="page"] option:selected').val()),
+				pages : $this.closest('form').find('select[name="page"]')
 			};
 			
 			if(form.pages.length < 1) {
