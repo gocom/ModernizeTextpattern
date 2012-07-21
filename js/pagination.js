@@ -24,11 +24,12 @@
 				return;
 			}
 			
-			form.prev = form.pages.prevAll('.navlink').eq(0);
-			form.next = form.pages.nextAll('.navlink').eq(0);
+			form.prev = form.pages.prevAll('.navlink, .navlink-disabled').eq(0).remove();
+			form.next = form.pages.nextAll('.navlink, .navlink-disabled').eq(0).remove();
 			
 			form.min = form.selected-5;
 			form.max = form.selected+5;
+			form.pages.parent().html(form.pages).prepend(form.prev).append(form.next);
 			
 			form.pages.find('option').each(function(i) {
 				var page = parseInt($(this).val());
@@ -37,7 +38,7 @@
 					return;
 				}
 			
-				form.pages.before(' <a class="navlink'+(form.selected == page ? ' navlink-disabled' : '')+'" href="?'+form.q+'&page='+page+'">'+page+'</a> ');
+				form.pages.before('<a class="navlink'+(form.selected == page ? ' navlink-disabled' : '')+'" href="?'+form.q+'&page='+page+'">'+page+'</a>');
 			});
 			
 			form.pages.remove();
