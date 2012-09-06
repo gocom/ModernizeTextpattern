@@ -5,3 +5,11 @@
 .search-form {
 	text-align: right;
 }
+
+.search-form input {
+	text-align: left;
+}
+
+.search-form p {
+	line-height: 1;
+}
