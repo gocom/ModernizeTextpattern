@@ -1,0 +1,13 @@
+/*!
+ * Drops min and max widths from the page
+ */
+
+body,
+.txp-header {
+	min-width: 0 !important;
+}
+
+.txp-body,
+.txp-header h1 {
+	max-width: auto !important;
+}
