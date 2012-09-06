@@ -4,6 +4,7 @@
 
 .search-form {
 	text-align: right;
+	position: relative;
 }
 
 .search-form input {
@@ -12,4 +13,13 @@
 
 .search-form p {
 	line-height: 1;
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+	min-width: 400px;
+}
+
+.search-form select,
+.search-form input:text {
+	width: 50%;
 }
