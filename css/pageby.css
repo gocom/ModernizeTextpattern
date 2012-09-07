@@ -1,0 +1,9 @@
+.pageby {
+	border-top: 1px solid #ddd;
+	float: none !important;
+}
+
+.pageby > * {
+	display: inline-block;
+	margin-right: 0.3em;
+}

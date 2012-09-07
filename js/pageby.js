@@ -19,17 +19,17 @@
 				selected : $this.find('select[name="qty"] option:selected').val()
 			};
 			
+			var out = [];
+			
+			form.to.addClass('nav-tertiary');
+			
 			$this.find('select[name="qty"] option').each(function(i) {
 				var qty = $(this).val();
-				
-				if(i) {
-					form.to.append('<span class="divider"> | </span>');
-				}
 			
-				form.to.append(' <a class="pagebylink'+(form.selected == qty ? ' active' : '')+'" href="?'+form.q+'&qty='+qty+'">'+qty+'</a> ');		
+				out.push('<a class="'+(form.selected == qty ? 'navlink-active' : 'navlink')+'" href="?'+form.q+'&amp;qty='+qty+'">'+qty+'</a>');		
 			});
-			
-			$this.find('select[name="qty"]').remove();
+
+			form.to.html(out.join(''));
 		});
 	};
 })(jQuery);
