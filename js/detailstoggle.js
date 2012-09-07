@@ -8,7 +8,7 @@
 
 (function($){
 	$.fn.rah_detailstoggle = function() {
-		$('.detail-toggle').appendTo('.pageby');
-		return;
+		this.appendTo('.pageby');
+		return this;
 	};
 })(jQuery);
