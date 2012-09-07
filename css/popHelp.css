@@ -1,0 +1,8 @@
+.pophelp {
+	opacity: 0;
+	-moz-transition: opacity 0.5s;
+}
+
+*:hover > .pophelp {
+	opacity: 1;
+}
