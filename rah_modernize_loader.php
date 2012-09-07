@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Textpattern plugin loader for the scripts. Can be installed
+ * A Textpattern plugin loader for ModernizeTextpattern. Can be installed
  * as a reqular Textpattern plugin.
  *
  * @author Jukka Svahn
@@ -14,37 +14,26 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-	if(@txpinterface == 'admin') {
-		register_callback(array('rah_modernize', 'head'), 'admin_side', 'head_end');
-	}
+	new rah_modernize();
 
 /**
  * Collects sources and adds them to the <head>
  */
 
 class rah_modernize {
-	
-	static public $instance;
-	public $assets = '';
-	
+
 	/**
-	 * Get new instance
+	 * @var string Path to assets directory
 	 */
-	
-	static public function get() {
-		
-		if(!self::$instance) {
-			self::$instance = new rah_modernize;
-		}
-		
-		return self::$instance;
-	}
-	
+
+	protected $assets = '';
+
 	/**
 	 * Constructor
 	 */
-	 
+	
 	public function __construct() {
+		register_callback(array($this, 'head'), 'admin_side', 'head_end');
 		
 		if(defined('rah_modernize')) {
 			$f = rtrim(rah_modernize, '\\/');
@@ -115,19 +104,17 @@ class rah_modernize {
 	 * Adds styles and JavaScript to the <head>
 	 */
 
-	static public function head() {
-		
-		$m = rah_modernize::get();
+	public function head() {
 		
 		echo 
 			'<style type="text/css">'.n.
-				implode(n, $m->collect_sources('css')).n.
+				implode(n, $this->collect_sources('css')).n.
 			'</style>';
 		
-		echo script_js(implode(n, $m->collect_sources('js')));
+		echo script_js(implode(n, $this->collect_sources('js')));
 		
-		if($m->safe_file($m->assets.'/modernize.js')) {
-			echo script_js(file_get_contents($m->assets.'/modernize.js'));
+		if($this->safe_file($this->assets.'/modernize.js')) {
+			echo script_js(file_get_contents($this->assets.'/modernize.js'));
 		}
 	}
 }
