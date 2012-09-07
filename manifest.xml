@@ -4,13 +4,13 @@
 	<description>Modernize Textpattern admin-side widgets</description>
 	
 	<version>0.1</version>
-	<type>5</type>
+	<type>3</type>
 	
 	<author>Jukka Svahn</author>
 	<author_uri>http://rahforum.biz</author_uri>
 	
 	<order>5</order>
-	<flags>3</flags>
+	<flags>0</flags>
 	
 	<help file="./README.textile" />
 
