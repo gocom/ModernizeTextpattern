@@ -27,8 +27,9 @@
 			form.prev = form.pages.prevAll('.navlink, .navlink-disabled').eq(0).remove();
 			form.next = form.pages.nextAll('.navlink, .navlink-disabled').eq(0).remove();
 			
-			form.min = form.selected-5;
-			form.max = form.selected+5;
+			form.min = Math.max(0, form.selected-4);
+			form.max = form.min+8;
+
 			form.pages.parent().html(form.pages).prepend(form.prev).append(form.next);
 			
 			form.pages.find('option').each(function(i) {
@@ -38,9 +39,11 @@
 					return;
 				}
 			
-				form.pages.before('<a class="navlink'+(form.selected == page ? ' navlink-disabled' : '')+'" href="?'+form.q+'&page='+page+'">'+page+'</a>');
+				form.pages.before('<a class="'+(form.selected == page ? 'navlink-active' : 'navlink')+'" href="?'+form.q+'&page='+page+'">'+page+'</a>');
 			});
 			
+			form.pages.parent().addClass('nav-tertiary');
+			form.pages.parent().find('.navlink-disabled').remove();
 			form.pages.remove();
 			
 			$(document).keydown(function(e) {
