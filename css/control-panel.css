@@ -1,0 +1,7 @@
+/*!
+ * Align control panel to the left, under the panel heading
+ */
+
+.txp-control-panel {
+	text-align: left;
+}
