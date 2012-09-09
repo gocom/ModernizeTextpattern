@@ -1,5 +1,5 @@
 /*!
- * Search forms default to single visible field.
+ * Search forms default to a single visible field.
  *
  * <code>
  *	$('.search-form').rah_search();
