@@ -1,5 +1,5 @@
 /*!
- * Moves details toggle to the table heading
+ * Moves details toggle
  *
  * <code>
  *	$('.detail-toggle').rah_detailstoggle();
