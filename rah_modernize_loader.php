@@ -46,6 +46,8 @@ class rah_modernize {
 		if($this->safe_dir($f)) {
 			$this->assets = $f;
 		}
+		
+		$this->hive();
 	}
 	
 	/**
@@ -115,6 +117,25 @@ class rah_modernize {
 		
 		if($this->safe_file($this->assets.'/modernize.js')) {
 			echo script_js(file_get_contents($this->assets.'/modernize.js'));
+		}
+	}
+	
+	/**
+	 * Toggle some Hive themes options
+	 */
+	
+	public function hive() {
+		foreach(array(
+			'branding',
+			'preview_tabs_group',
+			'textile_group',
+			'tag_builder_column',
+			'form_preview',
+			'copy_as',
+		) as $option) {
+			if(!defined('hive_theme_hide_'.$option)) {
+				define('hive_theme_hide_'.$option, true);
+			}
 		}
 	}
 }
