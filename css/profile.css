@@ -1,0 +1,64 @@
+/*!
+ * Display profile details next to the Logout button.
+ */
+
+.rah_profile
+{
+	float: left;
+	cursor: pointer;
+}
+
+.rah_profile_avatar
+{
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-clip: content-box;
+	border: 1px solid rgba(0,0,0,0.15);
+	box-sizing: content-box;
+}
+
+.rah_profile .rah_profile_avatar
+{
+	float: left;
+	height: 2em;
+	width: 2em;
+	margin: -2px 0.5em 0 0;
+}
+
+.rah_profile .rah_profile_info
+{
+	float: left;
+	line-height: 1.1em;
+	font-size: 0.9em;
+	color: #e2a005;
+}
+
+.rah_profile_info .rah_profile_name
+{
+	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+	font-weight: 700;
+}
+
+.rah_profile_info .rah_profile_title
+{
+	color: #4d4d4d;
+	text-transform: uppercase;
+	font-size: 0.75em;
+	vertical-align: top;
+}
+
+.rah_profile_actions
+{
+	position: absolute;
+	top: -3em;
+	right: 100%;
+	padding: 0 0.5em 0 0;
+}
+
+.rah_profile_slideout
+{
+	transition: all 0.5s linear;
+	top: 0;
+}

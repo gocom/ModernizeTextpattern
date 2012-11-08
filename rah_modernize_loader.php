@@ -113,6 +113,7 @@ class rah_modernize {
 				implode(n, $this->collect_sources('css')).n.
 			'</style>';
 		
+		echo $this->attach_details();
 		echo script_js(implode(n, $this->collect_sources('js')));
 		
 		if($this->safe_file($this->assets.'/modernize.js')) {
@@ -137,6 +138,24 @@ class rah_modernize {
 				define('hive_theme_hide_'.$option, true);
 			}
 		}
+	}
+
+	/**
+	 * Pass user gravatar to JavaScript.
+	 */
+
+	public function attach_details()
+	{
+		global $txp_user;
+
+		$privs = fetch('privs', 'txp_users', 'name', $txp_user);
+		$groups = get_groups();
+
+		return script_js('var rah_modernize = ' . json_encode(array(
+			'gravatar' => md5(get_author_email($txp_user)),
+			'realname' => get_author_name($txp_user),
+			'group'    => isset($groups[$privs]) ? $groups[$privs] : '',
+		)).';');
 	}
 }
 
