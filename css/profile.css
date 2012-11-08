@@ -14,7 +14,7 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
-	background-clip: content-box;
+	background-clip: padding-box;
 	border: 1px solid rgba(0,0,0,0.15);
 	box-sizing: content-box;
 }
