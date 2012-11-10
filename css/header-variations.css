@@ -1,0 +1,44 @@
+/**
+ * Hollyhock Pink.
+ */
+
+.pink .txp-header
+{
+	background-image: linear-gradient(#e8b2d3, #db95b7);
+}
+
+/**
+ * Midnight.
+ */
+
+.midnight .txp-header
+{
+	background-image: linear-gradient(#0066ff, #114eb1);
+}
+
+/**
+ * Midday sky.
+ */
+
+.midday .txp-header
+{
+	background-image: linear-gradient(#90b4eb, #76a2e3);
+}
+
+/**
+ * Grape.
+ */
+
+.grape .txp-header
+{
+	background-image: linear-gradient(#d5e67e, #b9cc60);
+}
+
+/**
+ * Purple.
+ */
+
+.elderberry .txp-header
+{
+	background-image: linear-gradient(#656269, #524c5a);
+}
