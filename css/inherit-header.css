@@ -1,0 +1,28 @@
+/*!
+ * Inherited header coloring.
+ *
+ * The main header's border and highlight
+ * colors are inherit from the main background.
+ *
+ * The appearance of the bar can be changed
+ * by altering the background gradient.
+ */
+
+.txp-header
+{
+	border: 0;
+	box-shadow: 
+		0 0.15385em 0.23077em rgba(0,0,0,0.15),
+		inset 0 -1px 0 rgba(0,0,0,0.1),
+		inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.dropdown
+{
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.dropdown:first-child
+{
+	border-left: 1px solid rgba(0,0,0,0.1);
+}
