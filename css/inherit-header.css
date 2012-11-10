@@ -32,3 +32,8 @@
 	text-shadow: 1px 1px 0 rgba(255,255,255,0.1);
 	color: inherit;
 }
+
+.rgba .dropdown-menu
+{
+	border: 1px solid rgba(0,0,0,0.15);
+}
