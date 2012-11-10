@@ -155,6 +155,7 @@ class rah_modernize {
 			'gravatar' => md5(get_author_email($txp_user)),
 			'realname' => get_author_name($txp_user),
 			'group'    => isset($groups[$privs]) ? $groups[$privs] : '',
+			'color'    => get_pref('rah_modernize_color_variation')
 		)).';');
 	}
 }
