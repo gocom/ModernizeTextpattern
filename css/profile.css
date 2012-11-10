@@ -32,18 +32,17 @@
 	float: left;
 	line-height: 1.1em;
 	font-size: 0.9em;
-	color: #e2a005;
 }
 
 .rah_profile_info .rah_profile_name
 {
 	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
 	font-weight: 700;
+	color: rgba(0,0,0,0.45);
 }
 
 .rah_profile_info .rah_profile_title
 {
-	color: #4d4d4d;
 	text-transform: uppercase;
 	font-size: 0.75em;
 	vertical-align: top;
