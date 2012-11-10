@@ -36,9 +36,9 @@
 
 .rah_profile_info .rah_profile_name
 {
-	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.1);
 	font-weight: 700;
-	color: rgba(0,0,0,0.45);
+	color: rgba(0,0,0,0.5);
 }
 
 .rah_profile_info .rah_profile_title
