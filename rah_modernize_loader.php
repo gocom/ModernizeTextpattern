@@ -19,8 +19,8 @@
  * Collects sources and adds them to the <head>
  */
 
-class rah_modernize {
-
+class rah_modernize
+{
 	/**
 	 * Path to assets directory.
 	 *
@@ -32,22 +32,25 @@ class rah_modernize {
 	/**
 	 * Constructor.
 	 */
-	
-	public function __construct() {
+
+	public function __construct()
+	{
 		register_callback(array($this, 'head'), 'admin_side', 'head_end');
-		
-		if(defined('rah_modernize')) {
+
+		if (defined('rah_modernize'))
+		{
 			$f = rtrim(rah_modernize, '\\/');
 		}
-		
-		else {
+		else
+		{
 			$f = dirname(txpath) . '/rah_modernize';
 		}
-		
-		if($this->safe_dir($f)) {
+
+		if ($this->safe_dir($f))
+		{
 			$this->assets = $f;
 		}
-		
+
 		$this->hive();
 	}
 
@@ -57,7 +60,8 @@ class rah_modernize {
 	 * @return bool
 	 */
 
-	public function safe_dir($f) {
+	public function safe_dir($f)
+	{
 		return file_exists($f) && is_readable($f) && is_dir($f);
 	}
 
@@ -67,7 +71,8 @@ class rah_modernize {
 	 * @return bool
 	 */
 
-	public function safe_file($f) {
+	public function safe_file($f)
+	{
 		return file_exists($f) && is_readable($f) && is_file($f);
 	}
 
@@ -78,31 +83,34 @@ class rah_modernize {
 	 * @return array
 	 */
 
-	public function collect_sources($type) {
-		
+	public function collect_sources($type)
+	{
 		$f = $this->assets . '/' . $type;
-		
-		if(!$this->assets || !file_exists($f)  || !is_dir($f) || !is_readable($f)) {
+
+		if (!$this->assets || !file_exists($f)  || !is_dir($f) || !is_readable($f))
+		{
 			return array();
 		}
-		
+
 		$f = glob($f.'/*.'.$type, GLOB_NOSORT);
-		
-		if(!$f) {
+
+		if (!$f)
+		{
 			return array();
 		}
-		
+
 		$out = array();
-		
-		foreach($f as $path) {
-			
-			if(!is_readable($path) || !is_file($path)) {
+
+		foreach ($f as $path)
+		{
+			if (!is_readable($path) || !is_file($path))
+			{
 				continue;
 			}
-			
+
 			$out[] = file_get_contents($path);
 		}
-		
+
 		return $out;
 	}
 
@@ -110,34 +118,40 @@ class rah_modernize {
 	 * Adds styles and JavaScript to the &lt;head&gt;.
 	 */
 
-	public function head() {
-		
+	public function head()
+	{
 		echo 
 			'<style type="text/css">'.n.
 				implode(n, $this->collect_sources('css')).n.
 			'</style>';
-		
+
 		echo $this->attach_details();
 		echo script_js(implode(n, $this->collect_sources('js')));
-		
-		if($this->safe_file($this->assets.'/modernize.js')) {
+
+		if ($this->safe_file($this->assets.'/modernize.js'))
+		{
 			echo script_js(file_get_contents($this->assets.'/modernize.js'));
 		}
 	}
-	
+
 	/**
-	 * Toggle some Hive themes options
+	 * Toggle some Hive themes options.
 	 */
-	
-	public function hive() {
-		foreach(array(
-			'branding',
-			'textile_group',
-			'tag_builder_column',
-			'form_preview',
-			'copy_as',
-		) as $option) {
-			if(!defined('hive_theme_hide_'.$option)) {
+
+	public function hive()
+	{
+		foreach (
+			array(
+				'branding',
+				'textile_group',
+				'tag_builder_column',
+				'form_preview',
+				'copy_as',
+			) as $option
+		)
+		{
+			if (!defined('hive_theme_hide_'.$option))
+			{
 				define('hive_theme_hide_'.$option, true);
 			}
 		}
@@ -162,5 +176,3 @@ class rah_modernize {
 		)).';');
 	}
 }
-
-?>
