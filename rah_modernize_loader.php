@@ -1,15 +1,14 @@
 <?php
 
 /**
- * A Textpattern plugin loader for ModernizeTextpattern. Can be installed
- * as a reqular Textpattern plugin.
+ * A Textpattern plugin loader for ModernizeTextpattern.
  *
- * @author Jukka Svahn
+ * @author    Jukka Svahn
  * @copyright (c) 2012 Jukka Svahn
- * @date 2012-
- * @license GNU GPLv2
+ * @date      2012-
+ * @license   GNU GPLv2
  *
- * Copyright (C) 2012 Jukka Svahn <http://rahforum.biz>
+ * Copyright (C) 2012 Jukka Svahn http://rahforum.biz
  * Licensed under GNU Genral Public License version 2
  * http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -23,13 +22,15 @@
 class rah_modernize {
 
 	/**
-	 * @var string Path to assets directory
+	 * Path to assets directory.
+	 *
+	 * @var string
 	 */
 
 	protected $assets = '';
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	
 	public function __construct() {
@@ -49,28 +50,31 @@ class rah_modernize {
 		
 		$this->hive();
 	}
-	
+
 	/**
-	 * Checks that directory is readable
+	 * Checks whether a directory is readable.
+	 *
 	 * @return bool
 	 */
-	
+
 	public function safe_dir($f) {
 		return file_exists($f) && is_readable($f) && is_dir($f);
 	}
-	
+
 	/**
-	 * Checks that file is readable
+	 * Checks whether a file is readable.
+	 *
 	 * @return bool
 	 */
-	
+
 	public function safe_file($f) {
 		return file_exists($f) && is_readable($f) && is_file($f);
 	}
-	
+
 	/**
-	 * Collects CSS and JavaScript files
-	 * @param string $type Either CSS or JS
+	 * Collects CSS and JavaScript files.
+	 *
+	 * @param  string $type Either "css" or "js"
 	 * @return array
 	 */
 
@@ -103,7 +107,7 @@ class rah_modernize {
 	}
 
 	/**
-	 * Adds styles and JavaScript to the <head>
+	 * Adds styles and JavaScript to the &lt;head&gt;.
 	 */
 
 	public function head() {
