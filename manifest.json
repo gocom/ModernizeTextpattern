@@ -1,0 +1,11 @@
+{
+	"name"        : "rah_modernize",
+	"description" : "Modernize Textpattern admin-side widgets",
+	"version"     : "0.1",
+	"type"        : 3,
+	"author"      : "Jukka Svahn",
+	"author_uri"  : "http://rahforum.biz",
+	"order"       : 5,
+	"flags"       : 0,
+	"help"        : {"file" : "./README.textile"}
+}
