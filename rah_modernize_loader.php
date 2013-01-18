@@ -128,7 +128,6 @@ class rah_modernize {
 	public function hive() {
 		foreach(array(
 			'branding',
-			'preview_tabs_group',
 			'textile_group',
 			'tag_builder_column',
 			'form_preview',
