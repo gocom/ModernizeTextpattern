@@ -19,6 +19,7 @@ $(document).ready(function()
 				$('<div />')
 					.addClass('rah_profile_avatar')
 					.css('background-image', 'url("https://secure.gravatar.com/avatar/' + rah_modernize.gravatar + '?s=48&d=mm")')
+					.attr('title', 'Gravatar')
 			)
 			.append(
 				$('<div />')
@@ -36,8 +37,8 @@ $(document).ready(function()
 			)
 	);
 
-	$('.rah_profile').click(function()
+	$('.rah_profile_avatar').click(function()
 	{
-		$('.rah_profile_actions').toggleClass('rah_profile_slideout');
+		window.open('http://gravatar.com/');
 	});
 });
