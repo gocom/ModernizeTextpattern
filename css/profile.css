@@ -4,8 +4,8 @@
 
 .rah_profile
 {
-	float: left;
-	cursor: pointer;
+	float: right;
+	margin: 0 0 0 0.5em;
 }
 
 .rah_profile_avatar
@@ -17,6 +17,7 @@
 	background-clip: padding-box;
 	border: 1px solid rgba(0,0,0,0.15);
 	box-sizing: content-box;
+	display: block;
 }
 
 .rah_profile .rah_profile_avatar
@@ -50,14 +51,5 @@
 
 .rah_profile_actions
 {
-	position: absolute;
-	top: -3em;
-	right: 100%;
-	padding: 0 0.5em 0 0;
-}
-
-.rah_profile_slideout
-{
-	transition: all 0.5s linear;
-	top: 0;
+	float: left;
 }
