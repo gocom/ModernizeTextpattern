@@ -12,7 +12,7 @@ $(document).ready(function()
 	$('.txp-logout')
 		.wrapInner('<div class="rah_profile_actions" />');
 
-	$('.txp-logout').prepend(
+	$('.txp-logout').append(
 		$('<div />')
 			.addClass('rah_profile')
 			.append(
