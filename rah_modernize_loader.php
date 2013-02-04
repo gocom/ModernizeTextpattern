@@ -51,6 +51,15 @@ class rah_modernize
 			$this->assets = $f;
 		}
 
+		if (gps('rah_modernize') == 'css')
+		{
+			$this->serve_css();
+		}
+		else if (gps('rah_modernize') == 'js')
+		{
+			$this->serve_js();
+		}
+
 		$this->hive();
 	}
 
@@ -120,18 +129,36 @@ class rah_modernize
 
 	public function head()
 	{
-		echo 
-			'<style type="text/css">'.n.
-				implode(n, $this->collect_sources('css')).n.
-			'</style>';
-
 		echo $this->attach_details();
-		echo script_js(implode(n, $this->collect_sources('js')));
+		echo '<link rel="stylesheet" href="?rah_modernize=css" />';
+		echo script_js('?rah_modernize=js', SCRIPT_URL);
+	}
+
+	/**
+	 * Serves CSS.
+	 */
+
+	public function serve_css()
+	{
+		header('Content-type: text/css');
+		echo implode(n, $this->collect_sources('css'));
 
 		if ($this->safe_file($this->assets.'/modernize.js'))
 		{
-			echo script_js(file_get_contents($this->assets.'/modernize.js'));
+			echo file_get_contents($this->assets.'/modernize.js');
 		}
+
+		die();
+	}
+
+	/**
+	 * Serves JavaScript.
+	 */
+
+	public function serve_js()
+	{
+		send_script_response(implode(n, $this->collect_sources('js')));
+		die();
 	}
 
 	/**
