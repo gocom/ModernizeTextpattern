@@ -70,3 +70,7 @@
 		});
 	};
 })(jQuery);
+
+$(document).ready(function(){
+	$('.txp-navigation .prev-next').rah_pagination();
+});

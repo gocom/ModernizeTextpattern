@@ -33,3 +33,7 @@
 		});
 	};
 })(jQuery);
+
+$(document).ready(function(){
+	$('.pageby').rah_pageby();
+});

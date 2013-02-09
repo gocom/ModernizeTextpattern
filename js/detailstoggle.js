@@ -12,3 +12,7 @@
 		return this;
 	};
 })(jQuery);
+
+$(document).ready(function(){
+	$('.detail-toggle, .cb_show_spam').rah_detailstoggle();
+});

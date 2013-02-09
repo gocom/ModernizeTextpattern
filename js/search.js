@@ -45,3 +45,7 @@
 		});
 	};
 })(jQuery);
+
+$(document).ready(function(){
+	$('.search-form').rah_search();
+});
