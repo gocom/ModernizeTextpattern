@@ -4,7 +4,7 @@ p. *Modernize Textpattern* is a collection of jQuery flavored JavaScript that ai
 
 h2. Requirements
 
-* Textpattern v4.5.0 or newer.
+* Textpattern v4.6.0-dev
 * Hive admin-theme.
 
 h2. Installation
