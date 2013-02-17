@@ -6,10 +6,3 @@ h2. Requirements
 
 * Textpattern v4.6.0-dev
 * Hive admin-theme.
-
-h2. Installation
-
-* Download "the plugin file":https://github.com/gocom/ModernizeTextpattern/downloads (e.g. rah_manifest_v*_zip.txt) and install it as a plugin from your *Plugins* panel like any other plugin. This plugin is a loader that will initialize the JavaScript and CSS files uploaded to your server.
-* After done, download the "repository":https://github.com/gocom/ModernizeTextpattern/zipball/master contents. You could also use a git to do a clone which would allow easier updating.
-* Extract the archive and upload (or git clone) it's contents (modernize.js, js and css directories) to a *rah_modernize* directory placed to the root of your site, next to the *textpattern* directory and *index.php* and *css.php* files.
-* Done.
